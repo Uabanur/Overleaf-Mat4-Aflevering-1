@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{01325 Mathematics - 4 Homework 1}
+\author{Roar Nind Steffensen (s144107)}
+\date{February 2016}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\textbf{ To be handed in February 10, at 15.15 o'clock.}
+\end{center}
+ \vspace{5mm}
+ 
+\section*{Problem 2.2}
+
+Let \textit{V} be a normed vector space and $\{\mathbf{v}_k\}_{k=1}^N$ a collection of vectors in \textit{V} . Assume that there exists a constant $A > 0$ such that the inequality
+\begin{equation}
+    A \sum_{k=1}^N |c_k|^2 \leq || \sum_{k=1}^N c_k \mathbf{v}_k ||^2
+\end{equation}
+holds for all scalar coefficients $c_1, . . . , c_N$ . Show that the vectors $\{\mathbf{v}_k\}_{k=1}^N$ are linearly independent.
+
+\subsection*{Solution:}
+
+For the collection of vectors to be linearly independent, then according to \textbf{definition 1.2.4}, the following must be true:
+
+\begin{gather}
+    \mathbf{v}_1 \cdot c_1+\mathbf{v}_2 \cdot c_2, ... , \mathbf{v}_N \cdot c_N =0 \Rightarrow \\
+    \sum_{k=1}^N c_k \cdot \mathbf{v}_k = 0
+\end{gather}
+
+Only if $\{c_k\}_{k=1}^N = 0 $. 
+\\
+\\
+But we know that the inequality holds for all scalar coefficients for $c_k$, so no linear combination of vectors may equal the zero-vector meaning: 
+\begin{equation}
+    ||\sum_{k=1}^N c_k \cdot \mathbf{v}_k ||^2 \neq  0 
+\end{equation}
+
+For $c_k \neq 0$. 
+\\
+\\
+All vectors must then be linearly independent for the inequality to be true.
+
+\newpage
+\section*{Problem 1 (Extra exercises)}
+
+Let \textit{V} denote the subset of $C[-\pi,\pi]$ consisting of all finite linear combinations of functions
+
+\begin{equation}\label{functions}
+    1, \mathrm{cos}\;x, \mathrm{cos}\;2x, ... , \mathrm{cos}\;nx, ... , \mathrm{sin}\;x, \mathrm{sin}\;2x, ... , \mathrm{sin}\;nx, ...
+\end{equation}
+\\
+(i) Show that $V$ is a subspace of $C[-\pi,\pi]$ \\
+\\
+(ii) Is $V$ closed in $C[-\pi,\pi]$? 
+
+
+\subsection*{Solution (i):}
+
+The functions \eqref{functions} are a subset of all the trigonometric functions which are known to be continuous on the given interval (as seen in \textbf{example 1.8.3}). \\
+\\
+Since \textit{addition} and \textit{scalar multiplication} are continuous operators, the functions \eqref{functions} fulfil the requirements of a subspace according to \textbf{lemma 1.2.7}
+
+\subsection*{Solution (ii):}
+
+Given inequality 
+
+\begin{equation}\label{inequality}
+    \left| x^2 -\left( \frac{\pi^2}{3} + 4 \sum_{n=1}^N \frac{(-1)^n}{n^2} \mathrm{cos} \; n x \right) \right| \leq 4 \sum_{n=N+1}^{\infty} \frac{1}{n^2}
+\end{equation}
+\\
+The sum within the left side of ineq. \eqref{inequality} can be composed of a linear combination of the functions in $V$. Now if $N \rightarrow \infty$, the right hand side of ineq.\eqref{inequality} goes towards zero, meaning that the left hand side does as follows:
+
+
+\begin{gather}
+    \left| x^2 -\left( \frac{\pi^2}{3} + 4 \sum_{n=1}^N \frac{(-1)^n}{n^2} \mathrm{cos} \; n x \right) \right| \leq 0 \Rightarrow \\
+    x^2 - \frac{\pi^2}{3} - 4 \sum_{n=1}^N \frac{(-1)^n}{n^2} \mathrm{cos} \; n x  = 0 \\
+     4 \sum_{n=1}^N \frac{(-1)^n}{n^2} \mathrm{cos} \; n x  = x^2 - \frac{\pi^2}{3}
+\end{gather}
+
+
+Remember, this is only valid for $N \rightarrow \infty$.
+\\
+Meaning our sum is converging towards $x^2$ (plus a constant), which is not in $V$, so using \textbf{lemma 2.2.3}, $V$ is not closed in $C[-\pi,\pi]$. (In order to use \textbf{lemma 2.2.3}, it is assumed that the vector space is normed, but in \textbf{example 2.1.4} it is shown that $C[a,b]$ is normed, which validates our assumption).
+
+\end{document}
